@@ -58,6 +58,6 @@ public class App
     {
         List jedis = List.of("Yoda", "Windu", "Anakin", "Luke", "Rey");
 
-        jedis.forEach( param -> System.out.println(param) );
+        jedis.forEach(System.out::println);
     }
 }
