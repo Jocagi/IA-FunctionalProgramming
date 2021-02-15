@@ -53,23 +53,26 @@ public class Laboratorio
 
     public static void main(String args[])
     {
-        System.out.println("Calculando Fibonacci de Primos...");
+        System.out.println("Calculando Primos...");
 
         var value = Integer.valueOf(args[0]);
 
         var listadoPrimos =
-                createRandomList(value).stream()
+                createRandomList(value).parallelStream()
                 .filter(n -> isPrimeNumber(n))
                 .sorted()
                 .collect(Collectors.toList());
 
-        System.out.println("Numeros primos: " + listadoPrimos);
+        //System.out.println("Numeros primos: " + listadoPrimos);
 
-        var listadoFibonacci = listadoPrimos.stream()
+        System.out.println("Calculando Fibonacci...");
+
+        var listadoFibonacci =
+                listadoPrimos.parallelStream()
                 .map(n -> fibonacci(n))
                 .collect(Collectors.toList());
 
         System.out.println("Calculo Finalizado");
-        System.out.println("Resultado Fibonacci: " + listadoFibonacci);
+        //System.out.println("Resultado Fibonacci: " + listadoFibonacci);
     }
 }
