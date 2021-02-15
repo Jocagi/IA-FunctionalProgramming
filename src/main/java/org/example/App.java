@@ -29,8 +29,21 @@ public class App
 
     private static void doSomethingFunctional()
     {
+        MyFunctionalInterface clippy = (String param) -> {
+            return "Hola soy Clippy y he recibido: " + param;
+        };
         MyFunctionalInterface wilbert = (p) -> "Hola soy Wilbert y he recibido: " + p;
-        System.out.println(wilbert.doSomething("Parametro Funcional"));
+
+        doSomethingHighOrder(clippy);
+        doSomethingHighOrder(wilbert);
+        doSomethingHighOrder(x -> "Hola soy anonymus y he recibido: " + x);
+    }
+
+    private static void doSomethingHighOrder(MyFunctionalInterface comportamiento)
+    {
+        //Ejecuta el comportamiento recibido
+        var respuesta = comportamiento.doSomething("Java 11 es genial");
+        System.out.println(respuesta);
     }
 
     public static void main( String[] args )
