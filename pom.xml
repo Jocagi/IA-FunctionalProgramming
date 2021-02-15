@@ -33,7 +33,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>org.example.StreamsDemo</mainClass>
+              <mainClass>org.example.Laboratorio</mainClass>
             </manifest>
           </archive>
         </configuration>
