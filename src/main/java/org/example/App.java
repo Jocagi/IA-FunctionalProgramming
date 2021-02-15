@@ -29,11 +29,7 @@ public class App
 
     private static void doSomethingFunctional()
     {
-        MyFunctionalInterface wilbert = (p) ->
-        {
-            return "Hola soy Wilbert y he recibido: " + p;
-        };
-
+        MyFunctionalInterface wilbert = (p) -> "Hola soy Wilbert y he recibido: " + p;
         System.out.println(wilbert.doSomething("Parametro Funcional"));
     }
 
