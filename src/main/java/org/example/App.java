@@ -37,6 +37,9 @@ public class App
         doSomethingHighOrder(clippy);
         doSomethingHighOrder(wilbert);
         doSomethingHighOrder(x -> "Hola soy anonymus y he recibido: " + x);
+
+        var tux = new Tux();
+        doSomethingHighOrder(tux::doSomething);
     }
 
     private static void doSomethingHighOrder(MyFunctionalInterface comportamiento)
