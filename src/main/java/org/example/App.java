@@ -29,17 +29,16 @@ public class App
 
     private static void doSomethingFunctional()
     {
-        MyFunctionalInterface clippy = (String param) -> {
-            return "Hola soy Clippy y he recibido: " + param;
+        MyFunctionalInterface wilbert = (p) ->
+        {
+            return "Hola soy Wilbert y he recibido: " + p;
         };
 
-        System.out.println(clippy.doSomething("Parametro Funcional"));
+        System.out.println(wilbert.doSomething("Parametro Funcional"));
     }
 
     public static void main( String[] args )
     {
-        doSomethingTraditional();
-        doSomethingClassy();
         doSomethingFunctional();
     }
 }
