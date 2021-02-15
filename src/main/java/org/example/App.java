@@ -34,12 +34,15 @@ public class App
         };
         MyFunctionalInterface wilbert = (p) -> "Hola soy Wilbert y he recibido: " + p;
 
+        /*
         doSomethingHighOrder(clippy);
         doSomethingHighOrder(wilbert);
         doSomethingHighOrder(x -> "Hola soy anonymus y he recibido: " + x);
+        */
 
-        var tux = new Tux();
-        doSomethingHighOrder(tux::doSomething);
+        var pikachu = new Pikachu();
+        doSomethingHighOrder(pikachu::pika);
+        doSomethingHighOrder(pikachu::impactrueno);
     }
 
     private static void doSomethingHighOrder(MyFunctionalInterface comportamiento)
