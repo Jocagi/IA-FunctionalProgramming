@@ -54,16 +54,17 @@ public class StreamsDemo
 
     public static void main(String args[])
     {
-        System.out.println("Iniciando Calculo");
+        System.out.println("Calculando Primos...");
 
         var listadoPrimos =
-                createRandomList(Integer.valueOf(args[0])).stream()
+                createRandomList(Integer.valueOf(args[0])).parallelStream()
                 .filter(n -> isPrimeNumber(n))
                 .sorted()
                 .collect(Collectors.toList());
 
         System.out.println("Calculo Finalizado");
-        System.out.println(listadoPrimos);
+        System.out.println("Primer primo: " + listadoPrimos.get(0));
+        //System.out.println(listadoPrimos);
 
         /*
         var primos =
