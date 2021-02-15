@@ -2,6 +2,8 @@ package org.example;
 
 import org.example.functional.MyFunctionalInterface;
 
+import java.util.List;
+
 /**
  * Hello world!
  *
@@ -54,6 +56,12 @@ public class App
 
     public static void main( String[] args )
     {
-        doSomethingFunctional();
+        List jedis = List.of("Yoda", "Windu", "Anakin", "Luke", "Rey");
+
+        for (int i = 0; i < jedis.size(); i++)
+        {
+            var jedi = jedis.get(i);
+            System.out.println(jedi);
+        }
     }
 }
