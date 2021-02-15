@@ -2,7 +2,10 @@ package org.example;
 
 import org.example.functional.MyFunctionalInterface;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * Hello world!
@@ -56,8 +59,14 @@ public class App
 
     public static void main( String[] args )
     {
-        List jedis = List.of("Yoda", "Windu", "Anakin", "Luke", "Rey");
+        List jedis = new ArrayList();
+        jedis.add("Anakin");
+        jedis.add("Rey");
+        jedis.add("Leia");
 
-        jedis.forEach(System.out::println);
+        Predicate<String> isNotAJedi = s -> s.equals("Rey");
+        jedis.removeIf(isNotAJedi);
+
+        System.out.println(jedis);
     }
 }
