@@ -63,11 +63,14 @@ public class App
     {
         List jedis = List.of("Anakin", "Leia", "Luke", "Rey");
 
-        var filteredJedis = jedis.stream()
+        var theJedis = jedis.stream()
+                .peek(System.out::println)
                 .filter(s -> !s.equals("Rey")) //Map
+                .peek(System.out::println)
                 .map(j -> j.toString().toUpperCase()) //Map
+                .peek(System.out::println)
                 .collect(Collectors.toList()); //Reduce
 
-        System.out.println(filteredJedis);
+        System.out.println("Resultado --- " + theJedis);
     }
 }
